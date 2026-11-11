@@ -42,3 +42,4 @@ Replace the example paths. The destination must not already exist. The source is
 - **Fixture fingerprint mismatch:** restore both tracked JSON fixtures from the same Git revision. They are preserved byte-for-byte; do not reformat them independently.
 - **Unknown opening / setup not locked:** complete the fictional account reviews before posting. Missing business facts must not be replaced with guessed amounts.
 - **No private source register installed:** expected in the public sample. Private documents are intentionally absent.
+- **SQLite cannot open a backup file on Windows:** extract the sample into a short local path. Deeply nested paths can exceed the filesystem path limit when tests create database and journal filenames.
