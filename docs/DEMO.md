@@ -4,11 +4,23 @@ Start the server using the README and open http://127.0.0.1:8770/.
 
 1. **Overview:** an untouched seeded workspace shows 500 bricks and INR 3,500 cash. Read stock and money separately.
 2. **Owner report:** inspect the supporting record references. Earnings, approvals and payments are separate events.
-3. **Bill corrections:** the teaching example changes an INR 200 bill to INR 250. A request and owner approval change the obligation. They do not move cash. A separate INR 50 payment settles the difference, leaving INR 3,450 in the untouched example.
+3. **Bill corrections:** follow the [three entries below](#check-a-bill-correction) to see when the amount owed changes and when cash moves.
 4. **Stock:** follow a lot through stages. A transfer changes location/stage, not the number newly produced. Returned stock needs inspection before it becomes saleable.
 5. **Backup:** use the app's backup action to create a verified local copy. Keep backup files off GitHub.
 
 The quoted figures apply only to an untouched demonstration. Your saved entries change its balances. To try again without losing anything, start with a new `--db` filename rather than deleting your current database.
+
+## Check a bill correction
+
+In a fresh seeded workspace, open **Record an activity** and keep the suggested dates. Use fictional text for the reason and evidence reference.
+
+| Activity | What to enter | Expected result |
+| --- | --- | --- |
+| Correction request | Select `BILL-001`; enter old amount 200 and proposed amount 250 | Request is pending. Nothing is owed on the original paid bill; cash stays INR 3,500. |
+| Correction review | Select the request and approve it | INR 50 is now owed. Cash stays INR 3,500. |
+| Bill payment | Select the same bill, the approved correction and its cash account; pay 50 | Nothing is owed. Cash falls to INR 3,450. |
+
+In **Owner’s report**, expand **Supplier payable total** under **Trace each measure**. The supporting references include the correction and approval; **Record trail → Correction history** shows the original and proposed amounts.
 
 ## Review opening balances
 

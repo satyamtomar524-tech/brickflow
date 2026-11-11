@@ -1,10 +1,14 @@
 # BrickFlow
 
-**A local brick-manufacturing operations sample built with Python, SQLite and JavaScript.**
+**Stage 2 · Finished portfolio sample**
+
+A local brick-manufacturing operations demo built with Python, SQLite and JavaScript.
 
 BrickFlow connects production, stock, work credits, bills, sales and payments so a reviewer can follow a reported balance back to its records. It is an AI-assisted learning and portfolio project by Satyam Tomar, informed by brick-industry workflow research in India.
 
-This sample is complete for its demonstrated fictional workflow. It is **not a production ERP**, an SAP integration, or evidence of measured business savings. All included identities, quantities and transactions are fictional.
+Stage 1 defined the workflow and records. Stage 2 is the runnable sample, ready for human review using the [five-minute walkthrough](docs/DEMO.md). All included identities, quantities and transactions are fictional.
+
+A real-plant pilot is a later milestone. It needs complete operating-cost records, reconciliation against permissioned source records, and authenticated roles. The sample does not establish production ERP readiness, SAP integration or measured business savings.
 
 ## What you can try
 
