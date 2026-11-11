@@ -1,0 +1,68 @@
+{
+  "id": "chapter2-correction-demo",
+  "status": "fictional_learning_example",
+  "source_file": "02_linked_records.json",
+  "source_id": "chapter2-linked-records-demo",
+  "source_sha256": "686367d63273d017cab171cf7dbf0beb0c139b5f8b59959b1c9e90c46eecd6bf",
+  "scope": "One internal bill-amount correction. Source file is retained; current views are derived in memory. This is not a supplier tax-invoice alteration or authenticated production audit log.",
+  "actors": [
+    {
+      "id": "DEMO-ACCOUNTANT",
+      "role": "accountant"
+    },
+    {
+      "id": "DEMO-OWNER",
+      "role": "owner"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "DEMO-REPAIR-SLIP",
+      "status": "fictional",
+      "description": "Imaginary slip showing INR 250; the original example entry transcribed INR 200."
+    }
+  ],
+  "requests": [
+    {
+      "id": "CORR-001",
+      "requested_on": "2026-02-08",
+      "requested_by": "DEMO-ACCOUNTANT",
+      "target_table": "bills",
+      "target_id": "BILL-001",
+      "field": "amount",
+      "old_value": 200,
+      "new_value": 250,
+      "reason": "Fictional transcription error: 200 entered instead of 250.",
+      "evidence_ref": "DEMO-REPAIR-SLIP"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "REVIEW-001",
+      "correction_ref": "CORR-001",
+      "reviewed_on": "2026-02-09",
+      "reviewed_by": "DEMO-OWNER",
+      "decision": "approved",
+      "reason": "Demo owner accepts the correction against the fictional slip."
+    }
+  ],
+  "settlements": [
+    {
+      "id": "CASH-004",
+      "correction_ref": "CORR-001",
+      "date": "2026-02-10",
+      "kind": "bill_payment",
+      "ref": "BILL-001",
+      "amount": 50
+    }
+  ],
+  "rules": [
+    "Requests and rejections do not alter the current balance.",
+    "Owner approval changes the bill obligation, not the earlier cash payment.",
+    "The additional INR 50 is paid only through a separate settlement record.",
+    "The original record and proposed old/new values remain visible.",
+    "File hashes detect drift against the recorded reference but do not make local files tamper-proof.",
+    "One correction per bill is supported in this lesson; corrections to stock, wages, taxes and already overpaid bills need their own workflow."
+  ]
+}
+

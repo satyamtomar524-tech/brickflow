@@ -1,0 +1,14 @@
+[tool.pytest.ini_options]
+# Current reference website only; earlier chapters have separate unittest commands.
+testpaths = ["development/review_app"]
+
+[tool.ruff]
+target-version = "py313"
+extend-exclude = ["My_Code", "my_build", "output", "outputs", "tmp", "data", "build", "dist"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.ruff.lint.per-file-ignores]
+# These local imports must follow the explicit sibling-module path setup.
+"development/review_app/server.py" = ["E402"]

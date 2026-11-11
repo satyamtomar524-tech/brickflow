@@ -1,0 +1,39 @@
+{
+  "id": "chapter2-linked-records-demo",
+  "status": "fictional_learning_example",
+  "plant_id": "DEMO-PLANT",
+  "period_start": "2026-02-01",
+  "period_end": "2026-03-15",
+  "currency": "INR",
+  "opening_cash": 2000,
+  "opening_stock": {"moulded": 0, "dry_green": 0, "loaded": 0, "cooling": 0, "first": 0, "lal_petti": 0, "pila_petti": 0, "unclassified": 0, "dispatched": 0},
+  "assumptions": [
+    "All identities, dates, quantities, bills and payments are fictional; this is a small separate example, not a new season forecast.",
+    "This is one partial production lot, not the capacity of a chamber or the plant.",
+    "Stock is counted in bricks and money in whole rupees; no losses or opening unfinished stock are assumed in this lesson.",
+    "Opening cash is an explicit example balance, not a sale or current-period profit.",
+    "The opening worker, supplier and customer balances are zero.",
+    "Dates illustrate separate drying, loading, firing and cooling records; they are not a validated operating recipe or permit.",
+    "The 2500 sale amount is an illustrative recorded face amount. Taxes are not decomposed; net accounting revenue remains unknown.",
+    "Only the moulding earnings and a cover-repair bill are included. Other production costs, statutory adjustments, taxes and inventory values are not modelled."
+  ],
+  "workers": [{"id": "WORKER-001", "name": "Demo Worker 001"}],
+  "work_credits": [{"id": "WORK-001", "date": "2026-02-01", "worker_id": "WORKER-001", "operation": "moulding", "quantity": 1000, "rate_per_1000": 800, "approved_on": "2026-02-06"}],
+  "stock_movements": [
+    {"id": "MOVE-001", "date": "2026-02-01", "from": null, "quantity": 1000, "to": [{"bucket": "moulded", "quantity": 1000}], "work_ref": "WORK-001"},
+    {"id": "MOVE-002", "date": "2026-02-16", "from": "moulded", "quantity": 1000, "to": [{"bucket": "dry_green", "quantity": 1000}]},
+    {"id": "MOVE-003", "date": "2026-03-01", "from": "dry_green", "quantity": 1000, "to": [{"bucket": "loaded", "quantity": 1000}]},
+    {"id": "MOVE-004", "date": "2026-03-03", "from": "loaded", "quantity": 1000, "to": [{"bucket": "cooling", "quantity": 1000}]},
+    {"id": "MOVE-005", "date": "2026-03-13", "from": "cooling", "quantity": 1000, "to": [{"bucket": "first", "quantity": 800}, {"bucket": "lal_petti", "quantity": 80}, {"bucket": "pila_petti", "quantity": 60}, {"bucket": "unclassified", "quantity": 60}]},
+    {"id": "MOVE-006", "date": "2026-03-15", "from": "first", "quantity": 500, "to": [{"bucket": "dispatched", "quantity": 500}]}
+  ],
+  "bills": [{"id": "BILL-001", "date": "2026-02-03", "supplier_id": "DEMO-SUPPLIER", "description": "Repair an existing rain cover", "amount": 200}],
+  "cash_entries": [
+    {"id": "CASH-001", "date": "2026-02-04", "kind": "bill_payment", "amount": 200, "ref": "BILL-001"},
+    {"id": "CASH-002", "date": "2026-02-07", "kind": "wage_payment", "amount": 800, "ref": "WORK-001"},
+    {"id": "CASH-003", "date": "2026-03-14", "kind": "customer_receipt", "customer_id": "DEMO-BUYER", "amount": 2500}
+  ],
+  "sales": [{"id": "SALE-001", "date": "2026-03-15", "customer_id": "DEMO-BUYER", "dispatch_ref": "MOVE-006", "grade": "first", "quantity": 500, "price_per_brick": 5, "amount": 2500}],
+  "receipt_allocations": [{"id": "ALLOC-001", "date": "2026-03-15", "receipt_ref": "CASH-003", "sale_ref": "SALE-001", "amount": 2500}],
+  "final_profit": null
+}

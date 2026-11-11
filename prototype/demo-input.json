@@ -1,0 +1,39 @@
+{
+  "fictional_demo": true,
+  "description": "Entirely invented teaching example, with no actual business inputs. Money is INR; quantities are individual bricks.",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-14",
+  "opening": {
+    "cash_inr": "12000.00",
+    "ready_green_bricks": 0,
+    "finished_bricks": 0,
+    "other_work_in_progress_bricks": 0
+  },
+  "reserve_inr": "3000.00",
+  "daily_firing_capacity_bricks": 4000,
+  "plant_capacity_limit_bricks": 4000,
+  "firing_days": 2,
+  "cooling_days": 3,
+  "saleable_yield": "0.90",
+  "green_lots": [
+    {"event_id": "demo-lot-01", "bricks": 10000, "moulded_on": "2026-02-01", "ready_on": "2026-02-03"},
+    {"event_id": "demo-lot-02", "bricks": 6000, "moulded_on": "2026-02-04", "ready_on": "2026-02-06"}
+  ],
+  "order": {
+    "event_id": "demo-order-01",
+    "bricks": 12000,
+    "dispatch_from": "2026-02-08",
+    "daily_dispatch_limit_bricks": 5000
+  },
+  "cash_events": [
+    {"event_id": "demo-advance-01", "date": "2026-02-02", "direction": "receipt", "amount_inr": "8000.00", "description": "Invented customer advance, independently scheduled before collection", "linked_event_id": "demo-order-01"},
+    {"event_id": "demo-fuel-payment-01", "date": "2026-02-03", "direction": "payment", "amount_inr": "6000.00", "description": "Invented scheduled fuel purchase payment", "linked_event_id": null},
+    {"event_id": "demo-wage-payment-01", "date": "2026-02-07", "direction": "payment", "amount_inr": "9000.00", "description": "Invented first weekly wage obligation", "linked_event_id": null},
+    {"event_id": "demo-repair-payment-01", "date": "2026-02-09", "direction": "payment", "amount_inr": "3500.00", "description": "Invented scheduled repair obligation", "linked_event_id": null},
+    {"event_id": "demo-wage-payment-02", "date": "2026-02-14", "direction": "payment", "amount_inr": "6500.00", "description": "Invented second weekly wage obligation", "linked_event_id": null}
+  ],
+  "scenarios": [
+    {"name": "baseline", "drying_delay_days": 0},
+    {"name": "drying_delayed_3_days", "drying_delay_days": 3}
+  ]
+}

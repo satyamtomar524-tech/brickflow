@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Page settings: the title appears on the browser tab. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BrickFlow | Operations sample</title>
+
+    <!-- CSS controls appearance. JavaScript fills the page and handles actions. -->
+    <link rel="stylesheet" href="/style.css">
+    <script defer src="/app.js"></script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content">Skip to workspace</a>
+
+    <!-- The sidebar contains the brand and navigation links. -->
+    <aside>
+      <a class="brand" href="#overview">
+        <span class="logo">▰</span> BrickFlow
+      </a>
+      <p class="eyebrow">PLANT WORKSPACE</p>
+      <nav id="nav" aria-label="Main navigation"></nav>
+
+      <div class="aside-foot">
+        <b>Local review edition</b>
+        <p>Fictional ledger · INR<br>One plant · one lot</p>
+        <span class="pill">Stored on this computer</span>
+      </div>
+    </aside>
+
+    <div class="shell">
+      <header>
+        <span>Operations / <b id="crumb">Overview</b></span>
+        <span class="pill">DEMO DATA</span>
+      </header>
+
+      <!-- JavaScript puts save messages and the selected page in these areas. -->
+      <div id="message" role="status" aria-live="polite"></div>
+      <main id="content" tabindex="-1">
+        <p>Opening your record book…</p>
+      </main>
+
+      <footer>
+        Recorded money is not automatically profit.
+        Private book readings stay outside this fictional ledger.
+      </footer>
+    </div>
+  </body>
+</html>

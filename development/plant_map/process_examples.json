@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "evidence_status": "fictional",
+  "cases": [
+    {
+      "ready": {
+        "event_id": "TIME-001",
+        "lot_id": "PROCESS-DEMO-A",
+        "kind": "ready_for_loading",
+        "occurred_at": "2026-03-02T08:00:00+05:30",
+        "recorded_at": "2026-03-02T09:00:00+05:30",
+        "recorded_by": "Demo observer",
+        "source_ref": "separate-process-lesson/TIME-001",
+        "evidence_status": "fictional_observation"
+      },
+      "loading": {
+        "event_id": "TIME-002",
+        "lot_id": "PROCESS-DEMO-A",
+        "kind": "loading_started",
+        "occurred_at": "2026-03-02T14:00:00+05:30",
+        "recorded_at": "2026-03-02T16:00:00+05:30",
+        "recorded_by": "Demo observer",
+        "source_ref": "separate-process-lesson/TIME-002",
+        "evidence_status": "fictional_observation"
+      }
+    },
+    {
+      "ready": {
+        "event_id": "TIME-003",
+        "lot_id": "PROCESS-DEMO-B",
+        "kind": "ready_for_loading",
+        "occurred_at": "2026-03-02T10:00:00+05:30",
+        "recorded_at": "2026-03-02T11:00:00+05:30",
+        "recorded_by": "Demo observer",
+        "source_ref": "separate-process-lesson/TIME-003",
+        "evidence_status": "fictional_observation"
+      },
+      "loading": null
+    }
+  ],
+  "reason": {
+    "reason_id": "REASON-001",
+    "lot_id": "PROCESS-DEMO-A",
+    "ready_event_id": "TIME-001",
+    "reported_by": "Demo foreman",
+    "reported_at": "2026-03-02T16:15:00+05:30",
+    "source_ref": "fictional-foreman-note-001",
+    "evidence_status": "fictional",
+    "explanation": "Kiln loading space was reported occupied by another lot."
+  }
+}

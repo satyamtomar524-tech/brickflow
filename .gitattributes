@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# The demo validates these exact fixture bytes with SHA256.
+learning/02_linked_records.json -text
+learning/03_correction_journal.json -text
